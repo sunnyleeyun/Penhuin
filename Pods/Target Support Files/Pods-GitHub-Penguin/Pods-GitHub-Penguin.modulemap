@@ -1,0 +1,6 @@
+framework module Pods_GitHub_Penguin {
+  umbrella header "Pods-GitHub-Penguin-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,431 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3FE5B142FE2964DF32F917 /* Pods_GitHub_Penguin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046CE69707C730DBEA6C1380 /* Pods_GitHub_Penguin.framework */; };
+		D485191D1DD9A3B90051FDBA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D485191C1DD9A3B90051FDBA /* GoogleService-Info.plist */; };
+		D4AE60BC1DD98E2100F7A7B6 /* SetAlarmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AE60BB1DD98E2100F7A7B6 /* SetAlarmsViewController.swift */; };
+		D4DB3ADD1DD83E9200456125 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DB3ADC1DD83E9200456125 /* AppDelegate.swift */; };
+		D4DB3ADF1DD83E9200456125 /* ProvideMyLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DB3ADE1DD83E9200456125 /* ProvideMyLocationViewController.swift */; };
+		D4DB3AE11DD83E9200456125 /* TrackTheirLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DB3AE01DD83E9200456125 /* TrackTheirLocationsViewController.swift */; };
+		D4DB3AE41DD83E9200456125 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4DB3AE21DD83E9200456125 /* Main.storyboard */; };
+		D4DB3AE61DD83E9200456125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4DB3AE51DD83E9200456125 /* Assets.xcassets */; };
+		D4DB3AE91DD83E9200456125 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4DB3AE71DD83E9200456125 /* LaunchScreen.storyboard */; };
+		D4DB3AF11DD8424700456125 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DB3AF01DD8424700456125 /* LogInViewController.swift */; };
+		D4DB3AF31DD8437200456125 /* WhistleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DB3AF21DD8437200456125 /* WhistleViewController.swift */; };
+		D4DB3AF51DD8438D00456125 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DB3AF41DD8438D00456125 /* SettingsViewController.swift */; };
+		D4DB3AF71DD8453A00456125 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DB3AF61DD8453A00456125 /* SignUpViewController.swift */; };
+		D4DB3AF91DD845B400456125 /* UpdateAccountInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DB3AF81DD845B400456125 /* UpdateAccountInfoViewController.swift */; };
+		D4DB3AFB1DD847DD00456125 /* SetParentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DB3AFA1DD847DD00456125 /* SetParentsViewController.swift */; };
+		D4DB3AFE1DD848C100456125 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DB3AFD1DD848C100456125 /* MapKit.framework */; };
+		D4DB3B001DD848CC00456125 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DB3AFF1DD848CC00456125 /* CoreLocation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		046CE69707C730DBEA6C1380 /* Pods_GitHub_Penguin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHub_Penguin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1018BC096ED5164B70FE5E49 /* Pods-GitHub-Penguin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHub-Penguin.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHub-Penguin/Pods-GitHub-Penguin.release.xcconfig"; sourceTree = "<group>"; };
+		D485191C1DD9A3B90051FDBA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D4AE60BB1DD98E2100F7A7B6 /* SetAlarmsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetAlarmsViewController.swift; sourceTree = "<group>"; };
+		D4DB3AD91DD83E9200456125 /* GitHub-Penguin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GitHub-Penguin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4DB3ADC1DD83E9200456125 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D4DB3ADE1DD83E9200456125 /* ProvideMyLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvideMyLocationViewController.swift; sourceTree = "<group>"; };
+		D4DB3AE01DD83E9200456125 /* TrackTheirLocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTheirLocationsViewController.swift; sourceTree = "<group>"; };
+		D4DB3AE31DD83E9200456125 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D4DB3AE51DD83E9200456125 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D4DB3AE81DD83E9200456125 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D4DB3AEA1DD83E9200456125 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4DB3AF01DD8424700456125 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		D4DB3AF21DD8437200456125 /* WhistleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhistleViewController.swift; sourceTree = "<group>"; };
+		D4DB3AF41DD8438D00456125 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		D4DB3AF61DD8453A00456125 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		D4DB3AF81DD845B400456125 /* UpdateAccountInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateAccountInfoViewController.swift; sourceTree = "<group>"; };
+		D4DB3AFA1DD847DD00456125 /* SetParentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetParentsViewController.swift; sourceTree = "<group>"; };
+		D4DB3AFD1DD848C100456125 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D4DB3AFF1DD848CC00456125 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D5936464906DC691A12DD087 /* Pods-GitHub-Penguin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHub-Penguin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHub-Penguin/Pods-GitHub-Penguin.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D4DB3AD61DD83E9200456125 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4DB3B001DD848CC00456125 /* CoreLocation.framework in Frameworks */,
+				D4DB3AFE1DD848C100456125 /* MapKit.framework in Frameworks */,
+				1D3FE5B142FE2964DF32F917 /* Pods_GitHub_Penguin.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		149BFFD5863729DFC9599867 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D5936464906DC691A12DD087 /* Pods-GitHub-Penguin.debug.xcconfig */,
+				1018BC096ED5164B70FE5E49 /* Pods-GitHub-Penguin.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D4DB3AD01DD83E9200456125 = {
+			isa = PBXGroup;
+			children = (
+				D4DB3ADB1DD83E9200456125 /* GitHub-Penguin */,
+				D4DB3ADA1DD83E9200456125 /* Products */,
+				D4DB3AFC1DD848C100456125 /* Frameworks */,
+				149BFFD5863729DFC9599867 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		D4DB3ADA1DD83E9200456125 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D4DB3AD91DD83E9200456125 /* GitHub-Penguin.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D4DB3ADB1DD83E9200456125 /* GitHub-Penguin */ = {
+			isa = PBXGroup;
+			children = (
+				D4DB3ADC1DD83E9200456125 /* AppDelegate.swift */,
+				D4DB3ADE1DD83E9200456125 /* ProvideMyLocationViewController.swift */,
+				D4DB3AE01DD83E9200456125 /* TrackTheirLocationsViewController.swift */,
+				D4DB3AE21DD83E9200456125 /* Main.storyboard */,
+				D4AE60BB1DD98E2100F7A7B6 /* SetAlarmsViewController.swift */,
+				D4DB3AFA1DD847DD00456125 /* SetParentsViewController.swift */,
+				D4DB3AF81DD845B400456125 /* UpdateAccountInfoViewController.swift */,
+				D4DB3AF61DD8453A00456125 /* SignUpViewController.swift */,
+				D4DB3AF41DD8438D00456125 /* SettingsViewController.swift */,
+				D4DB3AF21DD8437200456125 /* WhistleViewController.swift */,
+				D4DB3AF01DD8424700456125 /* LogInViewController.swift */,
+				D4DB3AE51DD83E9200456125 /* Assets.xcassets */,
+				D4DB3AE71DD83E9200456125 /* LaunchScreen.storyboard */,
+				D4DB3AEA1DD83E9200456125 /* Info.plist */,
+				D485191C1DD9A3B90051FDBA /* GoogleService-Info.plist */,
+			);
+			path = "GitHub-Penguin";
+			sourceTree = "<group>";
+		};
+		D4DB3AFC1DD848C100456125 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4DB3AFF1DD848CC00456125 /* CoreLocation.framework */,
+				D4DB3AFD1DD848C100456125 /* MapKit.framework */,
+				046CE69707C730DBEA6C1380 /* Pods_GitHub_Penguin.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D4DB3AD81DD83E9200456125 /* GitHub-Penguin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4DB3AED1DD83E9200456125 /* Build configuration list for PBXNativeTarget "GitHub-Penguin" */;
+			buildPhases = (
+				0E06F028CCAB8EC03911B334 /* [CP] Check Pods Manifest.lock */,
+				D4DB3AD51DD83E9200456125 /* Sources */,
+				D4DB3AD61DD83E9200456125 /* Frameworks */,
+				D4DB3AD71DD83E9200456125 /* Resources */,
+				B69CC6F95E05F460A17FE60A /* [CP] Embed Pods Frameworks */,
+				16F98064DD6EB3FE84E5B4F1 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GitHub-Penguin";
+			productName = CodeForGender;
+			productReference = D4DB3AD91DD83E9200456125 /* GitHub-Penguin.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D4DB3AD11DD83E9200456125 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "M.A.D. Crew";
+				TargetAttributes = {
+					D4DB3AD81DD83E9200456125 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = UP8PG5RXV7;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D4DB3AD41DD83E9200456125 /* Build configuration list for PBXProject "GitHub-Penguin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D4DB3AD01DD83E9200456125;
+			productRefGroup = D4DB3ADA1DD83E9200456125 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D4DB3AD81DD83E9200456125 /* GitHub-Penguin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D4DB3AD71DD83E9200456125 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4DB3AE91DD83E9200456125 /* LaunchScreen.storyboard in Resources */,
+				D485191D1DD9A3B90051FDBA /* GoogleService-Info.plist in Resources */,
+				D4DB3AE61DD83E9200456125 /* Assets.xcassets in Resources */,
+				D4DB3AE41DD83E9200456125 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E06F028CCAB8EC03911B334 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		16F98064DD6EB3FE84E5B4F1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GitHub-Penguin/Pods-GitHub-Penguin-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B69CC6F95E05F460A17FE60A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GitHub-Penguin/Pods-GitHub-Penguin-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D4DB3AD51DD83E9200456125 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4DB3AF11DD8424700456125 /* LogInViewController.swift in Sources */,
+				D4DB3AFB1DD847DD00456125 /* SetParentsViewController.swift in Sources */,
+				D4DB3AF71DD8453A00456125 /* SignUpViewController.swift in Sources */,
+				D4DB3AF31DD8437200456125 /* WhistleViewController.swift in Sources */,
+				D4DB3AF91DD845B400456125 /* UpdateAccountInfoViewController.swift in Sources */,
+				D4DB3AE11DD83E9200456125 /* TrackTheirLocationsViewController.swift in Sources */,
+				D4DB3ADD1DD83E9200456125 /* AppDelegate.swift in Sources */,
+				D4DB3ADF1DD83E9200456125 /* ProvideMyLocationViewController.swift in Sources */,
+				D4DB3AF51DD8438D00456125 /* SettingsViewController.swift in Sources */,
+				D4AE60BC1DD98E2100F7A7B6 /* SetAlarmsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D4DB3AE21DD83E9200456125 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4DB3AE31DD83E9200456125 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D4DB3AE71DD83E9200456125 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4DB3AE81DD83E9200456125 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D4DB3AEB1DD83E9200456125 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "GitHub-Penguin";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D4DB3AEC1DD83E9200456125 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "GitHub-Penguin";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D4DB3AEE1DD83E9200456125 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5936464906DC691A12DD087 /* Pods-GitHub-Penguin.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UP8PG5RXV7;
+				INFOPLIST_FILE = "GitHub-Penguin/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MADCrew.GitHub.Penguin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D4DB3AEF1DD83E9200456125 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1018BC096ED5164B70FE5E49 /* Pods-GitHub-Penguin.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UP8PG5RXV7;
+				INFOPLIST_FILE = "GitHub-Penguin/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MADCrew.GitHub.Penguin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D4DB3AD41DD83E9200456125 /* Build configuration list for PBXProject "GitHub-Penguin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4DB3AEB1DD83E9200456125 /* Debug */,
+				D4DB3AEC1DD83E9200456125 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4DB3AED1DD83E9200456125 /* Build configuration list for PBXNativeTarget "GitHub-Penguin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4DB3AEE1DD83E9200456125 /* Debug */,
+				D4DB3AEF1DD83E9200456125 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D4DB3AD11DD83E9200456125 /* Project object */;
+}
