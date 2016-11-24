@@ -20,6 +20,8 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var Email_TextField: UITextField!
     
+    @IBOutlet weak var Logo: UIImageView!
+    
     @IBOutlet weak var Take_Picture_Button_Tapped: UIButton!
     
     @IBAction func Confirm_Button_Tapped(_ sender: UIButton) {
@@ -29,6 +31,11 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        loadTheme()
+        
+        
 
         // Do any additional setup after loading the view.
     }
@@ -36,6 +43,40 @@ class SignUpViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
+    func loadTheme() {
+    
+        if Manager.currentThemeNumber == 0 {
+            
+            self.view.backgroundColor = UIColor.init(red: 170.0/255.0, green: 226.0/255.0, blue: 252.0/255.0, alpha: 1.0)
+            
+            
+            Logo.image = UIImage(named: "angel-1")
+            
+            /////////set size
+
+            
+            
+            
+        } else if Manager.currentThemeNumber == 1 {
+            
+            
+            self.view.backgroundColor = UIColor.init(red: 238.0/255.0, green: 189.0/255.0, blue: 217.0/255.0, alpha: 1.0)
+            
+            Logo.image = UIImage(named: "flower")
+            
+            
+            //////Set image size
+            /*
+            let screenSize: CGRect = UIScreen.main.bounds
+            Logo.frame = CGRectMake(0,0, screenSize.height * 0.2, 50)
+            
+*/
+        }
+        
     }
     
 

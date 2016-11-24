@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1D3FE5B142FE2964DF32F917 /* Pods_GitHub_Penguin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046CE69707C730DBEA6C1380 /* Pods_GitHub_Penguin.framework */; };
 		D485191D1DD9A3B90051FDBA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D485191C1DD9A3B90051FDBA /* GoogleService-Info.plist */; };
+		D487B56C1DE45E740093E02E /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D487B56B1DE45E740093E02E /* Manager.swift */; };
 		D4AE60BC1DD98E2100F7A7B6 /* SetAlarmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AE60BB1DD98E2100F7A7B6 /* SetAlarmsViewController.swift */; };
 		D4DB3ADD1DD83E9200456125 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DB3ADC1DD83E9200456125 /* AppDelegate.swift */; };
 		D4DB3ADF1DD83E9200456125 /* ProvideMyLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DB3ADE1DD83E9200456125 /* ProvideMyLocationViewController.swift */; };
@@ -30,6 +31,7 @@
 		046CE69707C730DBEA6C1380 /* Pods_GitHub_Penguin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHub_Penguin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1018BC096ED5164B70FE5E49 /* Pods-GitHub-Penguin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHub-Penguin.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHub-Penguin/Pods-GitHub-Penguin.release.xcconfig"; sourceTree = "<group>"; };
 		D485191C1DD9A3B90051FDBA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D487B56B1DE45E740093E02E /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		D4AE60BB1DD98E2100F7A7B6 /* SetAlarmsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetAlarmsViewController.swift; sourceTree = "<group>"; };
 		D4DB3AD91DD83E9200456125 /* GitHub-Penguin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GitHub-Penguin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4DB3ADC1DD83E9200456125 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				D4DB3ADE1DD83E9200456125 /* ProvideMyLocationViewController.swift */,
 				D4DB3AE01DD83E9200456125 /* TrackTheirLocationsViewController.swift */,
 				D4DB3AE21DD83E9200456125 /* Main.storyboard */,
+				D487B56B1DE45E740093E02E /* Manager.swift */,
 				D4AE60BB1DD98E2100F7A7B6 /* SetAlarmsViewController.swift */,
 				D4DB3AFA1DD847DD00456125 /* SetParentsViewController.swift */,
 				D4DB3AF81DD845B400456125 /* UpdateAccountInfoViewController.swift */,
@@ -256,6 +259,7 @@
 				D4DB3AE11DD83E9200456125 /* TrackTheirLocationsViewController.swift in Sources */,
 				D4DB3ADD1DD83E9200456125 /* AppDelegate.swift in Sources */,
 				D4DB3ADF1DD83E9200456125 /* ProvideMyLocationViewController.swift in Sources */,
+				D487B56C1DE45E740093E02E /* Manager.swift in Sources */,
 				D4DB3AF51DD8438D00456125 /* SettingsViewController.swift in Sources */,
 				D4AE60BC1DD98E2100F7A7B6 /* SetAlarmsViewController.swift in Sources */,
 			);
