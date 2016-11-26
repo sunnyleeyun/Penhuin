@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class LogInViewController: UIViewController {
 
@@ -51,6 +53,8 @@ class LogInViewController: UIViewController {
         
     }
     
+    var uid = ""
+    
     @IBOutlet weak var Account_Icon: UIImageView!
     
     @IBOutlet weak var Password_Icon: UIImageView!
@@ -73,11 +77,122 @@ class LogInViewController: UIViewController {
     
     @IBAction func SignIn_Button_Tapped(_ sender: UIButton) {
         
+        // 檢查 帳號跟密碼欄，是否確實有填寫 (ps 帳號欄，目前是用email代替
+        if self.Account_TextField.text == "" || self.Password_TextField.text == ""{
+            let alertController = UIAlertController(title:"Oops!", message: "Please enter Account & password", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title:"OK!", style: .cancel, handler:nil)
+            alertController.addAction(defaultAction)
+            
+            self.present(alertController, animated:true,completion:nil)
+        }else{
+            FIRAuth.auth()?.signIn(withEmail: self.Account_TextField.text!, password: self.Password_TextField.text!, completion:{(user,error) in
+                
+                if error == nil{
+                    
+                    //拿 UID
+                    self.uid = ""
+                    if let user = FIRAuth.auth()?.currentUser {
+                        
+                        self.uid = user.uid  // The user's ID, unique to the Firebase project.
+                        // Do NOT use this value to authenticate with
+                        // your backend server, if you have one. Use
+                        // getTokenWithCompletion:completion: instead.
+                        
+                        /////////////////
+                        
+                        var ref = FIRDatabase.database().reference(withPath: "Online-Status/\(self.uid)")
+                        ref.setValue("ON")
+                        //ref.updateChildValues()
+                        //ref.setValue(nil)
+                        
+                        /////////////
+                        
+                    } else {
+                        // No user is signed in.
+                    }
+                    
+                    
+                    
+                    var ref = FIRDatabase.database().reference(withPath: "ID/\(self.uid)/Profile/Safety-Check")
+                    ref.setValue("ON")
+                    
+                    
+                    
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let nextVC = storyboard.instantiateViewController(withIdentifier: "UITabControllerID")as! UITabBarController
+                    self.present(nextVC,animated:true,completion:nil)
+                    
+                    print("========================Successful already have a account in Firebase!!")
+                    
+                    
+                    
+                }else{
+                    let alertController = UIAlertController(title:"Oops!", message: error?.localizedDescription, preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title:"OK!", style: .cancel, handler:nil)
+                    alertController.addAction(defaultAction)
+                    
+                    self.present(alertController, animated:true,completion:nil)
+                }
+            })
+        }
+        
+
     }
     
     
     
     @IBAction func SignUp_Button_Tapped(_ sender: UIButton) {
+        // 檢查 帳號跟密碼欄，是否確實有填寫
+        if self.Account_TextField.text == "" || self.Password_TextField.text == ""{
+            let alertController = UIAlertController(title:"Oops!", message: "Please enter Account & password", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title:"OK!", style: .cancel, handler:nil)
+            alertController.addAction(defaultAction)
+            
+            self.present(alertController, animated:true,completion:nil)
+        }else{
+            
+            // 在Firebase的Auth中，新增使用戶
+            FIRAuth.auth()?.createUser(withEmail: self.Account_TextField.text!, password: self.Password_TextField.text!, completion: {(user,error) in
+                
+                if error == nil{
+                    
+                    
+                    //拿 UID
+                    self.uid = ""
+                    if let user = FIRAuth.auth()?.currentUser {
+                        
+                        self.uid = user.uid  // The user's ID, unique to the Firebase project.
+                        // Do NOT use this value to authenticate with
+                        // your backend server, if you have one. Use
+                        // getTokenWithCompletion:completion: instead.
+                    } else {
+                        // No user is signed in.
+                    }
+                    
+                    
+                    
+                    var ref = FIRDatabase.database().reference(withPath: "ID/\(self.uid)/Profile/Safety-Check")
+                    ref.setValue("ON")
+                    
+                    
+                    
+                    
+                    //跳到註冊頁
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let nextVC = storyboard.instantiateViewController(withIdentifier: "SignUpViewControllerID")as! SignUpViewController
+                    self.present(nextVC,animated:true,completion:nil)
+                    
+                    
+                }else{
+                    let alertController = UIAlertController(title:"Oops!", message: error?.localizedDescription, preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title:"OK!", style: .cancel, handler:nil)
+                    alertController.addAction(defaultAction)
+                    
+                    self.present(alertController, animated:true,completion:nil)
+                }
+            })
+        }
+
         
     }
     
@@ -86,9 +201,22 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Logo_Red.isHidden = true
-        
         loadTheme()
+        
+        Logo_Red.isHidden = true
+
+        // 使用者登出
+        try!FIRAuth.auth()?.signOut()
+        
+        //讓目前使用者的帳號顯現
+        if let user = FIRAuth.auth()?.currentUser{
+            self.Account_TextField.text = user.email
+        }else{
+            self.Account_TextField.text = ""
+        }
+        
+        
+        self.hideKeyboardWhenTappedAround()
         
         // Do any additional setup after loading the view.
     }
@@ -146,4 +274,16 @@ class LogInViewController: UIViewController {
     }
     */
 
+}
+
+// Function to hide keyboard when touching anywhere else
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

@@ -161,7 +161,7 @@
 				TargetAttributes = {
 					D4DB3AD81DD83E9200456125 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = UP8PG5RXV7;
+						DevelopmentTeam = VJGEDW5SA9;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -385,10 +385,11 @@
 			baseConfigurationReference = D5936464906DC691A12DD087 /* Pods-GitHub-Penguin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = UP8PG5RXV7;
+				DEVELOPMENT_TEAM = VJGEDW5SA9;
 				INFOPLIST_FILE = "GitHub-Penguin/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = MADCrew.GitHub.Penguin;
+				PRODUCT_BUNDLE_IDENTIFIER = www.sunnyleeyun.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -399,10 +400,11 @@
 			baseConfigurationReference = 1018BC096ED5164B70FE5E49 /* Pods-GitHub-Penguin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = UP8PG5RXV7;
+				DEVELOPMENT_TEAM = VJGEDW5SA9;
 				INFOPLIST_FILE = "GitHub-Penguin/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = MADCrew.GitHub.Penguin;
+				PRODUCT_BUNDLE_IDENTIFIER = www.sunnyleeyun.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

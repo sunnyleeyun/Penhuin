@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class SignUpViewController: UIViewController {
 
+    var ref: FIRDatabaseReference!
+    
+    var SignUpCompletionProgressView_Count = 0.0
+    var uid = ""
+    
     
     @IBOutlet weak var Name_TextField: UITextField!
-    
     
     @IBOutlet weak var Gender_TextField: UITextField!
     
@@ -24,9 +30,56 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var Take_Picture_Button_Tapped: UIButton!
     
+    
+
+    
     @IBAction func Confirm_Button_Tapped(_ sender: UIButton) {
-        
-        
+        if Name_TextField.text == "" || Gender_TextField.text == "" || PhoneNumber_TextField.text == "" || Email_TextField.text == ""{
+            //####提醒尚未完成之項目
+            
+            
+            
+            //Create Alert Controller
+            let alert = UIAlertController(title: "還有項目沒有填完唷！", message: "填寫完整資料，讓大家更容易認識你。", preferredStyle: UIAlertControllerStyle.alert)
+            
+            //Create confirm Action
+            let confirm = UIAlertAction(title: "繼續填寫註冊資料", style: UIAlertActionStyle.default) { (action: UIAlertAction) -> Void in
+                
+            }
+            
+            alert.addAction(confirm)
+            
+            
+            
+            
+            
+            //Present Alert Controller
+            self.present(alert, animated: true, completion: nil)
+            
+        }else{
+            
+            //Setvalue to Firebase
+            
+            //Name setvalue
+            self.ref = FIRDatabase.database().reference(withPath: "ID/\(self.uid)/Profile/Real-Name")
+            self.ref.setValue(Name_TextField.text!)
+            
+            //Gender setvalue
+            self.ref = FIRDatabase.database().reference(withPath: "ID/\(self.uid)/Profile/Gender")
+            self.ref.setValue(Gender_TextField.text!)
+            
+            //Phone setvalue
+            self.ref = FIRDatabase.database().reference(withPath: "ID/\(self.uid)/Profile/Phone-Number")
+            self.ref.setValue(PhoneNumber_TextField.text!)
+            
+            //Email setvalue
+            self.ref = FIRDatabase.database().reference(withPath: "ID/\(self.uid)/Profile/Email")
+            self.ref.setValue(Email_TextField.text!)
+            
+
+            
+        }
+    
     }
     
     override func viewDidLoad() {
@@ -34,6 +87,25 @@ class SignUpViewController: UIViewController {
         
         
         loadTheme()
+        
+        //Just to make sure confirmation page doesn't load before the app is done importing data from Firebase
+        //拿 UID
+        if let user = FIRAuth.auth()?.currentUser {
+            
+            uid = user.uid  // The user's ID, unique to the Firebase project.
+            // Do NOT use this value to authenticate with
+            // your backend server, if you have one. Use
+            // getTokenWithCompletion:completion: instead.
+            print("uid is \(uid)")
+        } else {
+            // No user is signed in.
+        }
+        
+        
+        
+        self.ref = FIRDatabase.database().reference(withPath: "ID/\(uid)/Profile/Safety-Check")
+        self.ref.setValue("ON")
+
         
         
 
