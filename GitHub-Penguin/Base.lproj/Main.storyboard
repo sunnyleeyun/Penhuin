@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ocg-z5-ggX">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ocg-z5-ggX">
                                 <frame key="frameInset" minY="64" width="414" height="369"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
@@ -69,7 +69,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="XA6-oI-8fN"/>
                     <connections>
+                        <outlet property="Center_Map_Button" destination="L8q-Mc-cnT" id="Rb6-CV-ZDb"/>
                         <outlet property="Provide_My_Location_Button_Text" destination="VSk-4W-ruJ" id="jaM-3c-imA"/>
+                        <outlet property="provide_myLocation_Map" destination="ocg-z5-ggX" id="I9t-Dd-Vkc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -88,7 +90,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aPz-eb-RlG">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aPz-eb-RlG">
                                 <frame key="frameInset" minY="72" width="414" height="526"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
@@ -135,9 +137,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="D9E-Jl-kKK"/>
                     <connections>
+                        <outlet property="Center_Map_Button" destination="SZD-K6-910" id="loc-sN-yPb"/>
                         <outlet property="Name_of_Tracked_Person" destination="1Yl-0C-5rd" id="EP7-yw-5Ol"/>
                         <outlet property="Picture_of_Tracked_Person" destination="F5f-IS-dJS" id="MPi-Ix-NyF"/>
                         <outlet property="Profile_Background_View" destination="E5Q-15-4GS" id="CZR-dh-gv7"/>
+                        <outlet property="track_theirLocation_Map" destination="aPz-eb-RlG" id="4K9-mv-dBn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -696,18 +700,6 @@
                                 <frame key="frameInset" minX="124" minY="535" width="209" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ah1-tR-51s">
-                                <frame key="frameInset" minX="84" minY="578" width="105" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                <state key="normal" title="登入" image="cloud-White">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="SignIn_Button_Tapped:" destination="VWQ-we-bJz" eventType="touchUpInside" id="yUe-NW-lVq"/>
-                                    <segue destination="49e-Tb-3d3" kind="show" id="e5i-3U-DNm"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dft-rr-mgs">
                                 <frame key="frameInset" minX="197" minY="578" width="96" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -777,6 +769,18 @@
                                 <frame key="frameInset" minX="57" width="300" height="400"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ah1-tR-51s">
+                                <frame key="frameInset" minX="93" minY="577" width="105" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="登入" image="cloud-White">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="SignIn_Button_Tapped:" destination="VWQ-we-bJz" eventType="touchUpInside" id="yUe-NW-lVq"/>
+                                    <segue destination="49e-Tb-3d3" kind="show" id="e5i-3U-DNm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.66828078030000004" green="0.8869835734" blue="0.99009102579999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>

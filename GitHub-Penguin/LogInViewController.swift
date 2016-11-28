@@ -84,6 +84,7 @@ class LogInViewController: UIViewController {
             alertController.addAction(defaultAction)
             
             self.present(alertController, animated:true,completion:nil)
+            
         }else{
             FIRAuth.auth()?.signIn(withEmail: self.Account_TextField.text!, password: self.Password_TextField.text!, completion:{(user,error) in
                 
@@ -101,11 +102,6 @@ class LogInViewController: UIViewController {
                         /////////////////
                         
                         var ref = FIRDatabase.database().reference(withPath: "Online-Status/\(self.uid)")
-                        ref.setValue("ON")
-                        //ref.updateChildValues()
-                        //ref.setValue(nil)
-                        
-                        /////////////
                         
                     } else {
                         // No user is signed in.
@@ -118,11 +114,7 @@ class LogInViewController: UIViewController {
                     
                     
                     
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let nextVC = storyboard.instantiateViewController(withIdentifier: "UITabControllerID")as! UITabBarController
-                    self.present(nextVC,animated:true,completion:nil)
                     
-                    print("========================Successful already have a account in Firebase!!")
                     
                     
                     
@@ -165,6 +157,10 @@ class LogInViewController: UIViewController {
                         // Do NOT use this value to authenticate with
                         // your backend server, if you have one. Use
                         // getTokenWithCompletion:completion: instead.
+                        
+                        var ref = FIRDatabase.database().reference(withPath: "Online-Status/\(self.uid)")
+                        ref.setValue("ON")
+                        
                     } else {
                         // No user is signed in.
                     }

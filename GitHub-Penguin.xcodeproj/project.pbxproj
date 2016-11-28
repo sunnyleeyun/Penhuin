@@ -97,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				D4DB3ADC1DD83E9200456125 /* AppDelegate.swift */,
+				D4DB3AF01DD8424700456125 /* LogInViewController.swift */,
+				D4DB3AF61DD8453A00456125 /* SignUpViewController.swift */,
 				D4DB3ADE1DD83E9200456125 /* ProvideMyLocationViewController.swift */,
 				D4DB3AE01DD83E9200456125 /* TrackTheirLocationsViewController.swift */,
 				D4DB3AE21DD83E9200456125 /* Main.storyboard */,
@@ -104,10 +106,8 @@
 				D4AE60BB1DD98E2100F7A7B6 /* SetAlarmsViewController.swift */,
 				D4DB3AFA1DD847DD00456125 /* SetParentsViewController.swift */,
 				D4DB3AF81DD845B400456125 /* UpdateAccountInfoViewController.swift */,
-				D4DB3AF61DD8453A00456125 /* SignUpViewController.swift */,
 				D4DB3AF41DD8438D00456125 /* SettingsViewController.swift */,
 				D4DB3AF21DD8437200456125 /* WhistleViewController.swift */,
-				D4DB3AF01DD8424700456125 /* LogInViewController.swift */,
 				D4DB3AE51DD83E9200456125 /* Assets.xcassets */,
 				D4DB3AE71DD83E9200456125 /* LaunchScreen.storyboard */,
 				D4DB3AEA1DD83E9200456125 /* Info.plist */,
