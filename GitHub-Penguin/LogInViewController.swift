@@ -173,10 +173,7 @@ class LogInViewController: UIViewController {
                     
                     var ref = FIRDatabase.database().reference(withPath: "ID/\(self.uid)/Profile/Safety-Check")
                     ref.setValue("ON")
-                    
-                    
-                    
-                    
+                                        
                     //跳到註冊頁
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let nextVC = storyboard.instantiateViewController(withIdentifier: "SignUpViewControllerID")as! SignUpViewController

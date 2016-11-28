@@ -7,21 +7,23 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
 class SetParentsViewController: UIViewController {
     
     
-    @IBOutlet weak var Parent_1_Name_TextField: UITextField!
+    //@IBOutlet weak var Parent_1_Name_TextField: UITextField!
     
     @IBOutlet weak var Parent_1_Account_TextField: UITextField!
     
     
-    @IBOutlet weak var Parent_2_Name_TextField: UITextField!
+    //@IBOutlet weak var Parent_2_Name_TextField: UITextField!
     
     @IBOutlet weak var Parent_2_Account_TextField: UITextField!
     
     
-    @IBOutlet weak var Parent_3_Name_TextField: UITextField!
+    //@IBOutlet weak var Parent_3_Name_TextField: UITextField!
     
     @IBOutlet weak var Parent_3_Account_TextField: UITextField!
     

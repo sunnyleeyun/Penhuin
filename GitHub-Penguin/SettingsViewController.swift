@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
 class SettingsViewController: UIViewController {
     
+    var uid = ""
     
     @IBOutlet weak var Logo: UIImageView!
     
@@ -27,7 +30,21 @@ class SettingsViewController: UIViewController {
     
     @IBAction func LogOff_Button_Tapped(_ sender: UIButton) {
         
-        
+        var uid = ""
+        //拿 UID
+        if let user = FIRAuth.auth()?.currentUser {
+            
+            uid = user.uid  // The user's ID, unique to the Firebase project.
+            // Do NOT use this value to authenticate with
+            // your backend server, if you have one. Use
+            // getTokenWithCompletion:completion: instead.
+        } else {
+            // No user is signed in.
+        }
+        // 使用者登出
+        var ref = FIRDatabase.database().reference(withPath: "Online-Status/\(uid)")
+        ref.setValue("OFF")
+        try!FIRAuth.auth()?.signOut()
         
     }
     
@@ -53,6 +70,19 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        //拿 UID
+        if let user = FIRAuth.auth()?.currentUser {
+            
+            uid = user.uid  // The user's ID, unique to the Firebase project.
+            // Do NOT use this value to authenticate with
+            // your backend server, if you have one. Use
+            // getTokenWithCompletion:completion: instead.
+        } else {
+            // No user is signed in.
+        }
+
+        
         loadTheme()
         // Do any additional setup after loading the view.
     }

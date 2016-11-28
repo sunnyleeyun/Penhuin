@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
 class UpdateAccountInfoViewController: UIViewController {
 
+    var uid = ""
+    
     
     @IBOutlet weak var Name_TextField: UITextField!
     
@@ -50,6 +54,44 @@ class UpdateAccountInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //拿 UID
+        if let user = FIRAuth.auth()?.currentUser {
+            
+            uid = user.uid  // The user's ID, unique to the Firebase project.
+            // Do NOT use this value to authenticate with
+            // your backend server, if you have one. Use
+            // getTokenWithCompletion:completion: instead.
+        } else {
+            // No user is signed in.
+        }
+        
+        FIRDatabase.database().reference(withPath: "ID/\(self.uid)/Profile/Real-Name").observe(.value, with: { (snapshot) in
+            if let secureRealName = (snapshot.value){
+                self.Name_TextField.text = secureRealName as? String
+            }
+        })
+        
+        FIRDatabase.database().reference(withPath: "ID/\(self.uid)/Profile/Gender").observe(.value, with: { (snapshot) in
+            if let secureGender = (snapshot.value){
+                self.Gender_TextField.text = secureGender as? String
+            }
+        })
+        
+        FIRDatabase.database().reference(withPath: "ID/\(self.uid)/Profile/Phone").observe(.value, with: { (snapshot) in
+            if let securePhone = (snapshot.value){
+                self.PhoneNumber_TextField.text = securePhone as? String
+            }
+        })
+        
+        FIRDatabase.database().reference(withPath: "ID/\(self.uid)/Profile/Email").observe(.value, with: { (snapshot) in
+            if let secureEmail = (snapshot.value){
+                self.Email_TextField.text = secureEmail as? String
+            }
+        })
+        
+        
+
+        
         
         loadTheme()
         // Do any additional setup after loading the view.

@@ -14,8 +14,8 @@ class SignUpViewController: UIViewController {
 
     var ref: FIRDatabaseReference!
     
-    var SignUpCompletionProgressView_Count = 0.0
-    var uid = ""
+    var confirmMessage = ""
+        
     
     
     @IBOutlet weak var Name_TextField: UITextField!
@@ -58,7 +58,24 @@ class SignUpViewController: UIViewController {
             
         }else{
             
-            //Setvalue to Firebase
+            //拿 UID
+            self.uid = ""
+            if let user = FIRAuth.auth()?.currentUser {
+                
+                self.uid = user.uid  // The user's ID, unique to the Firebase project.
+                // Do NOT use this value to authenticate with
+                // your backend server, if you have one. Use
+                // getTokenWithCompletion:completion: instead.
+                
+                /////////////////
+                
+             
+                
+            } else {
+                // No user is signed in.
+            }
+
+
             
             //Name setvalue
             self.ref = FIRDatabase.database().reference(withPath: "ID/\(self.uid)/Profile/Real-Name")
@@ -76,11 +93,58 @@ class SignUpViewController: UIViewController {
             self.ref = FIRDatabase.database().reference(withPath: "ID/\(self.uid)/Profile/Email")
             self.ref.setValue(Email_TextField.text!)
             
-
+            showConfirmationPage()
             
         }
     
     }
+    
+    
+    
+    func showConfirmationPage(){
+        
+        confirmMessage = "\n我的名字：" + Name_TextField.text! + "\n我的性別："  + Gender_TextField.text! + "\n我的手機：" + PhoneNumber_TextField.text! + "\n我的Email：" + Email_TextField.text!
+        
+        
+        //Create Alert Controller
+        let alert = UIAlertController(title: "註冊資料確認", message: confirmMessage, preferredStyle: UIAlertControllerStyle.alert)
+        
+        //Create confirm Action
+        let confirm = UIAlertAction(title: "確定", style: UIAlertActionStyle.default) { (action: UIAlertAction) -> Void in
+            
+            //Open LogInViewController
+            let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewControllerID") as! LogInViewController
+            self.addChildViewController(popOverVC)
+            popOverVC.view.frame = self.view.frame
+            self.view.addSubview(popOverVC.view)
+            popOverVC.didMove(toParentViewController: self)
+            
+            
+        }
+        
+        alert.addAction(confirm)
+        
+        
+        
+        
+        
+        
+        //Create Cancel Action
+        let cancel = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel) { (action: UIAlertAction) -> Void in self.confirmMessage = ""
+        }
+        
+        alert.addAction(cancel)
+        
+        
+        
+        
+        //Present Alert Controller
+        self.present(alert, animated: true, completion: nil)
+        
+        
+    }
+    
+    var uid = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,8 +167,8 @@ class SignUpViewController: UIViewController {
         
         
         
-        self.ref = FIRDatabase.database().reference(withPath: "ID/\(uid)/Profile/Safety-Check")
-        self.ref.setValue("ON")
+        //self.ref = FIRDatabase.database().reference(withPath: "ID/\(uid)/Profile/Safety-Check")
+        //self.ref.setValue("ON")
 
         
         
