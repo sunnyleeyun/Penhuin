@@ -84,7 +84,7 @@ class TrackTheirLocationsViewController: UIViewController, CLLocationManagerDele
         //拿 UID
         if let user = FIRAuth.auth()?.currentUser {
             
-            let uid = user.uid  // The user's ID, unique to the Firebase project.
+            uid = user.uid  // The user's ID, unique to the Firebase project.
             // Do NOT use this value to authenticate with
             // your backend server, if you have one. Use
             // getTokenWithCompletion:completion: instead.
@@ -140,19 +140,10 @@ class TrackTheirLocationsViewController: UIViewController, CLLocationManagerDele
 
     
     func keepUploadingMyLocation(){
-        //拿 UID
-        if let user = FIRAuth.auth()?.currentUser {
-            
-            let uid = user.uid  // The user's ID, unique to the Firebase project.
-            // Do NOT use this value to authenticate with
-            // your backend server, if you have one. Use
-            // getTokenWithCompletion:completion: instead.
-        } else {
-            // No user is signed in.
-        }
+        
         
         //Start updating my latitude to Firebase
-        ref = FIRDatabase.database().reference(withPath: "ID/\(uid)/Profile/Current-Location/Latitude")
+        ref = FIRDatabase.database().reference(withPath: "ID/\(self.uid)/Profile/Current-Location/Latitude")
         
         ref.setValue(myCurrentLatitude, withCompletionBlock:
             {(Error, FIRDatabaseReference) -> Void in
@@ -165,7 +156,7 @@ class TrackTheirLocationsViewController: UIViewController, CLLocationManagerDele
         
         
         //Start updating my longitude to Firebase
-        ref = FIRDatabase.database().reference(withPath: "ID/\(uid)/Profile/Current-Location/Longitude")
+        ref = FIRDatabase.database().reference(withPath: "ID/\(self.uid)/Profile/Current-Location/Longitude")
         
         ref.setValue(myCurrentLongitude, withCompletionBlock:
             {(Error, FIRDatabaseReference) -> Void in
