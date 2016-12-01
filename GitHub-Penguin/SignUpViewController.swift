@@ -93,6 +93,13 @@ class SignUpViewController: UIViewController {
             self.ref = FIRDatabase.database().reference(withPath: "ID/\(self.uid)/Profile/Email")
             self.ref.setValue(Email_TextField.text!)
             
+            
+            
+            //Extra setvalue for Phone
+            self.ref = FIRDatabase.database().reference(withPath: "PhoneNumber").child(PhoneNumber_TextField.text!)
+            self.ref.setValue(self.uid)
+            
+            
             showConfirmationPage()
             
         }
@@ -166,10 +173,6 @@ class SignUpViewController: UIViewController {
         }
         
         
-        
-        //self.ref = FIRDatabase.database().reference(withPath: "ID/\(uid)/Profile/Safety-Check")
-        //self.ref.setValue("ON")
-
         
         
 

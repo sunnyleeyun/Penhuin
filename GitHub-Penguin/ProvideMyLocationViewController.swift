@@ -91,6 +91,7 @@ class ProvideMyLocationViewController: UIViewController, CLLocationManagerDelega
         
         loadTheme()
         
+        /*
         //拿 UID
         if let user = FIRAuth.auth()?.currentUser {
             
@@ -99,10 +100,14 @@ class ProvideMyLocationViewController: UIViewController, CLLocationManagerDelega
             // your backend server, if you have one. Use
             // getTokenWithCompletion:completion: instead.
         } else {
+            print("provide my location no user is signed in")
+
             // No user is signed in.
         }
-
+        */
         
+        self.uid = Manager.uidtext
+        print("self uid is \(self.uid)")
         
         ////////////////////   MAP   ////////////////////////
         
@@ -146,7 +151,6 @@ class ProvideMyLocationViewController: UIViewController, CLLocationManagerDelega
     }
     
     func keepUploadingMyLocation(){
-        
         
         
         //Start updating my latitude to Firebase

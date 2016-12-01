@@ -10,7 +10,7 @@ import Foundation
 
 struct Manager {
     
-    static var messageText = String()
+    static var uidtext = String()
     static var currentThemeNumber = 0
     
 }

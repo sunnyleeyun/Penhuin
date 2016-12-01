@@ -101,7 +101,12 @@ class LogInViewController: UIViewController {
                         
                         /////////////////
                         
-                        var ref = FIRDatabase.database().reference(withPath: "Online-Status/\(self.uid)")
+                        var reff = FIRDatabase.database().reference(withPath: "Online-Status/\(self.uid)")
+                        reff.setValue("ON")
+                        
+                        //放到Manager裡面儲存
+                        Manager.uidtext = self.uid
+
                         
                     } else {
                         // No user is signed in.
@@ -112,7 +117,11 @@ class LogInViewController: UIViewController {
                     var ref = FIRDatabase.database().reference(withPath: "ID/\(self.uid)/Profile/Safety-Check")
                     ref.setValue("ON")
                     
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let nextVC = storyboard.instantiateViewController(withIdentifier: "UITabControllerID")as! UITabBarController
+                    self.present(nextVC,animated:true,completion:nil)
                     
+                    print("========================Successful already have a account in Firebase!!")
                     
                     
                     

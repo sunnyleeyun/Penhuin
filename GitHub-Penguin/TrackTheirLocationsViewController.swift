@@ -81,6 +81,8 @@ class TrackTheirLocationsViewController: UIViewController, CLLocationManagerDele
         //Hide the "Profile" (at the button of the view)
         Profile_Background_View.isHidden = true
         
+        
+        /*
         //拿 UID
         if let user = FIRAuth.auth()?.currentUser {
             
@@ -89,10 +91,12 @@ class TrackTheirLocationsViewController: UIViewController, CLLocationManagerDele
             // your backend server, if you have one. Use
             // getTokenWithCompletion:completion: instead.
         } else {
+            print("track their location no user is signed in")
             // No user is signed in.
         }
+        */
         
-        
+        self.uid = Manager.uidtext
         
         ////////////////////   MAP   ////////////////////////
         

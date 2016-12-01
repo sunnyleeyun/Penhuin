@@ -16,7 +16,8 @@ class UpdateAccountInfoViewController: UIViewController {
     var ref: FIRDatabaseReference!
     var confirmMessage = ""
 
-
+    var phoneNumber = ""
+    var uidToDisplay = ""
     
     
     @IBOutlet weak var Name_TextField: UITextField!
@@ -92,6 +93,28 @@ class UpdateAccountInfoViewController: UIViewController {
             self.ref = FIRDatabase.database().reference(withPath: "ID/\(self.uid)/Profile/Email")
             self.ref.setValue(Email_TextField.text!)
             
+            //Extra setvalue for Phone
+            self.ref = FIRDatabase.database().reference(withPath: "PhoneNumber").child(PhoneNumber_TextField.text!)
+            self.ref.setValue(self.uid)
+            
+            //Iterate through every user's chatlist in database
+            FIRDatabase.database().reference().child("ID/\(self.uid)/Profile/ChatList").observe(.value, with: { (snapshot) in
+                
+                if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot]{
+                    
+                    for child in snapshots{
+                        
+                        //好友uid
+                        self.phoneNumber = child.key
+                        print("ChatListAccount is \(self.phoneNumber)")
+                        
+                        //好友messengerAutoID
+                        self.uidToDisplay = child.value as! String
+                        print("messengerAutoID is \(self.uidToDisplay)")
+                    }
+                }
+            })
+            
             showConfirmationPage()
             
         }
@@ -143,16 +166,7 @@ class UpdateAccountInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //拿 UID
-        if let user = FIRAuth.auth()?.currentUser {
-            
-            uid = user.uid  // The user's ID, unique to the Firebase project.
-            // Do NOT use this value to authenticate with
-            // your backend server, if you have one. Use
-            // getTokenWithCompletion:completion: instead.
-        } else {
-            // No user is signed in.
-        }
+        self.uid = Manager.uidtext
         
         FIRDatabase.database().reference(withPath: "ID/\(self.uid)/Profile/Real-Name").observe(.value, with: { (snapshot) in
             if let secureRealName = (snapshot.value){
